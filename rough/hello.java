@@ -1,7 +1,7 @@
-package rough;
-
-public class hello {
+import hi.hello;
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        hello obj = new hello();
+        obj.sayHello();
     }
 }
