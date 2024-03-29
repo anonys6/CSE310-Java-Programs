@@ -1,19 +1,34 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 
 public class FindDay {
     public static void main(String[] args) {
-        String dateStr = "2002-12-20";
+        File inputFile = new File("input.txt");
+        File outputFile = new File("output.txt");
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        try (Scanner sc = new Scanner(inputFile);
+                PrintWriter writer = new PrintWriter(outputFile)) {
 
-        LocalDate date = LocalDate.parse(dateStr, formatter);
+            String dateStr = sc.nextLine();
 
-        System.out.println(date.getDayOfYear());
-        System.out.println(date.getDayOfWeek());
-        System.out.println(date.getDayOfMonth());
-        System.out.println(date.getChronology());
-        System.out.println(date.getLong(ChronoField.DAY_OF_YEAR));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+            LocalDate date = LocalDate.parse(dateStr, formatter);
+
+            writer.println(date.getDayOfYear());
+            writer.println(date.getDayOfWeek());
+            writer.println(date.getDayOfMonth());
+            writer.println(date.getChronology());
+            writer.println(date.getLong(ChronoField.DAY_OF_YEAR));
+
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }
