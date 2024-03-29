@@ -32,7 +32,5 @@ public class Fre {
 
         System.out.println(tool.toString());
 
-
-
     }
 }
