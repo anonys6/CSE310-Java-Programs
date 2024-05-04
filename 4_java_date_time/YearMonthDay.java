@@ -26,6 +26,12 @@ public class YearMonthDay {
 
             writer.println(period.getYears() + " years " + period.getMonths() + " months " + period.getDays() + " days");
 
+            // Period period = Period.between(startDate, endDate);
+
+            // writer.println(period.getYears());
+            // writer.println(period.getMonths());
+            // writer.println(period.getDays());
+
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
