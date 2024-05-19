@@ -1,1 +1,6 @@
-7770
+sum1: 13
+sum2: 9
+sum3: 8
+sum4: 12
+sum5: 31
+totalSum: 73
